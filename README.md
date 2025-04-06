@@ -37,6 +37,18 @@ The system consists of loosely coupled microservices that interact via HTTP (RES
 - Add more integrations
 
 
+## Services
+
+Tablular description of services
+
+
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express
+
+
 ## Installation
 
 Install my-project with npm
@@ -78,18 +90,6 @@ Use Swagger docs: http://localhost:<SERVICE_PORT>/docs
 #### add(num1, num2)
 
 Takes two numbers and returns the sum.
-
-
-## Services
-
-Tablular description of services
-
-
-## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
 
 
 ## Run Locally
