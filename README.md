@@ -1,19 +1,22 @@
 
 ![SigDep](./docs/images/sigdep-logo.png)
 
-
 # SigDep
 
 Event-Driven Task and Event Management System (ED-TEMS)
 
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0) ![Static Badge](https://img.shields.io/badge/build%20-%20passing%20-%20green) ![Static Badge](https://img.shields.io/badge/version%20-%20v0.1%20-%20orange)
+[![GPL 3.0 License](https://img.shields.io/badge/license-GPL_v3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) ![Static Badge](https://img.shields.io/badge/build%20-%20passing%20-%20green) ![Static Badge](https://img.shields.io/badge/version%20-%20v0.1%20-%20orange)
+
 
 ## Overview
 
 SigDep (codename: ED-TEMS) is a distributed, scalable architecture designed to manage user-defined tasks and events. Built on microservices and event-driven communication patterns, the system supports complex task structures (including sub-task structure, attachments) with dynamic workflows like status and priority update and seamless synchronization with external calendaring services such as Google Calendar.
+
+
 ##  Architecture
 
 The system consists of loosely coupled microservices that interact via HTTP (REST) and, optionally, an event-driven message broker (Kafka). The API Gateway serves as a single entry point for all client requests with a WebUI which helps facilitate user actions.
+
 
 ## Features
 
@@ -25,6 +28,7 @@ The system consists of loosely coupled microservices that interact via HTTP (RES
 - Event reminders and real-time notifications
 - Centralized API access through a gateway
 - Synchronization with Google Calendar for 3rd party clients to access via Google Calendar
+
 
 ## Roadmap
 
@@ -79,11 +83,14 @@ Takes two numbers and returns the sum.
 ## Services
 
 Tablular description of services
+
+
 ## Tech Stack
 
 **Client:** React, Redux, TailwindCSS
 
 **Server:** Node, Express
+
 
 ## Run Locally
 
@@ -125,6 +132,8 @@ Start the server
 ## License
 
 [AGPL](https://choosealicense.com/licenses/agpl/)
+
+
 
 ## References and Links
 
