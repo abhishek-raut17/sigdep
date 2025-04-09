@@ -1,0 +1,38 @@
+### Application Configuration File ###
+
+# Server properties
+server:
+  port: 8080
+
+# App properties
+spring:
+  application:
+    name: gateway-proxy
+
+# Logging properties
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"
+  level:
+    root: INFO
+    web: DEBUG
+    reactor: DEBUG
+
+# Monitoring properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  health:
+    reactive:
+      enabled: true
+
+### EOF ###
