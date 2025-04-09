@@ -209,7 +209,7 @@ crash.log
 
 # Kubernetes configuration files
 *.yaml
-*.yml
+#*.yml
 kubeconfig
 .kube/
 
