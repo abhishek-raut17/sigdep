@@ -208,8 +208,8 @@ crash.log
 # Kubernetes configuration and deployment files
 
 # Kubernetes configuration files
-*.yaml
-*.yml
+#*.yaml
+#*.yml
 kubeconfig
 .kube/
 
@@ -226,7 +226,7 @@ values.*.yml
 manifests/
 
 k8s/
-cluster/
+#cluster/
 *.decoded.*
 kubeseal/
 sealed-secrets/
