@@ -67,6 +67,7 @@ install_binary() {
     fi
 }
 
+# Validate the version of a binary in path
 validate_version() {
     local bin_name="$1"
     local version_flag="$2"
@@ -126,6 +127,7 @@ validate_helm_repo() {
     fi
 }
 
+# Create k8s namespace
 create_namespace() {
     local namespace="$1"
 
@@ -159,7 +161,7 @@ else
     echo -e "${BLUE}$LOCAL_BIN is already in PATH.${NC}"
 fi
 
-# # Check if KinD, kubectl, flux and helm are installed
+# Check if KinD, kubectl, flux and helm are installed
 # Kind
 install_binary "kind" "-L" "https://kind.sigs.k8s.io/dl/v0.27.0/kind-linux-amd64"
 validate_version "kind"
@@ -190,6 +192,7 @@ if [[ -f "$LOCAL_BIN/cloud-provider-kind" && -f "$LOCAL_BIN/cloud-provider-kind.
     command rm $LOCAL_BIN/LICENSE
     command rm $LOCAL_BIN/README.md
     command chmod 750 $LOCAL_BIN/cloud-provider-kind
+    command cloud-provider-kind &
 fi
 
 # Cluster creation
@@ -236,13 +239,12 @@ helm upgrade --install k8s-dashboard kubernetes-dashboard/kubernetes-dashboard \
     --namespace monitoring \
     --set protocolHttp=true
 
+# Wait for k8s-dashboard components to be ready
 monitor_cluster "Available" "2m" "deployments.apps/k8s-dashboard-kong" "monitoring"
 kubectl patch svc k8s-dashboard-kong-proxy -n monitoring \
   -p '{"spec": {"type": "LoadBalancer"}}'
 
 monitor_cluster "Ready" "2m" "services/k8s-dashboard-kong-proxy" "monitoring"
-cloud-provider-kind &
-
 echo -e "${GREEN}k8s-dashboard installed successfully.${NC}"
 
 # Create a service account for the dashboard and cluster-admin role binding
