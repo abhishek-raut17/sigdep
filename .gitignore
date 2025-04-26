@@ -343,3 +343,6 @@ coverage/
 .*-ssh*
 .ssh*
 .ssh/
+
+### (Custom) Token output file  ###
+*token
